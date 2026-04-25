@@ -1,0 +1,2 @@
+# Failed crypto tickers (0 tickers)
+# Format: symbol | ETF_proxy | error_reason

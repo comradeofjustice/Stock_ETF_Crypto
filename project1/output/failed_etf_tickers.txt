@@ -1,0 +1,2 @@
+# Failed ETF tickers for later analysis (0 tickers)
+# Format: original_ticker | akshare_symbol | error_reason
