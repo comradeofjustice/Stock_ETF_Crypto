@@ -52,12 +52,13 @@ DEVICE   = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 COLOR_ACT = "black"
 
-# Per-model: (correct_color, wrong_color, linewidth, linestyle, alpha)
+# Per-model: (correct_color, wrong_color, linewidth, alpha)
+# Correct = bright/saturated, Wrong = very dark same hue — high contrast
 MODEL_STYLES = {
-    "har":         ("#27ae60", "#c0392b", 0.8, "solid",  0.80),
-    "lgbm":        ("#2980b9", "#d35400", 1.0, "dashed", 0.80),
-    "lstm":        ("#2ecc71", "#e74c3c", 1.6, "solid",  0.85),
-    "transformer": ("#a29bfe", "#fd79a8", 1.6, "dashed", 0.85),
+    "har":         ("#48CAE4", "#03045E", 0.9, 0.85),   # bright cyan   / dark navy
+    "lgbm":        ("#FB8500", "#370617", 1.2, 0.85),   # bright orange / near-black brown
+    "lstm":        ("#52B788", "#1B4332", 2.0, 0.90),   # bright green  / dark forest green
+    "transformer": ("#E040FB", "#4A0072", 2.0, 0.90),   # bright magenta/ dark purple
 }
 
 
@@ -245,7 +246,7 @@ def plot_all(daily):
         legend_elems = [Line2D([0], [0], color=COLOR_ACT, lw=1.8, label="Actual RV")]
 
         for key, cfg_key in MODEL_CFG_KEYS.items():
-            col_ok, col_err, lw, ls, alpha = MODEL_STYLES[cfg_key]
+            col_ok, col_err, lw, alpha = MODEL_STYLES[cfg_key]
             label = MODEL_LABELS[key]
             pred  = daily[f"{key}_{h}"].values
             valid = ~np.isnan(pred)
@@ -255,11 +256,10 @@ def plot_all(daily):
             acc = ok.mean()
             colored_line(ax, dates[valid], pred[valid], ok,
                          col_ok, col_err, lw, alpha)
-            ls_kw = dict(linestyle=ls) if ls != "solid" else {}
             legend_elems += [
-                Line2D([0], [0], color=col_ok,  lw=lw, **ls_kw,
+                Line2D([0], [0], color=col_ok,  lw=lw,
                        label=f"{label} ✓ {acc:.0%}"),
-                Line2D([0], [0], color=col_err, lw=lw, **ls_kw,
+                Line2D([0], [0], color=col_err, lw=lw,
                        label=f"{label} ✗"),
             ]
 
@@ -275,8 +275,8 @@ def plot_all(daily):
 
     fig.suptitle(
         "Predicted vs Actual RV — Test Set (2024)  |  All Models\n"
-        "Bright/saturated = direction correct  |  Faded = direction wrong\n"
-        "HAR (dark·solid)  ·  LightGBM (blue·dash)  ·  LSTM (green·solid)  ·  Transformer (purple·dash)",
+        "Bright color = direction correct  |  Dark color = direction wrong\n"
+        "HAR (cyan)  ·  LightGBM (orange)  ·  LSTM (green, thick)  ·  Transformer (magenta, thick)",
         fontsize=11, y=1.01,
     )
     plt.tight_layout()
