@@ -1,0 +1,43 @@
+data:
+  raw_dir: data/raw
+  features_dir: data/features
+  labels_dir: data/labels
+  dataset_path: data/dataset.parquet
+
+horizons: [10, 20, 30, 40, 50, 60]   # forward RV targets (days)
+rv_windows: [10, 20, 30, 40, 50, 60]  # rolling RV features (days)
+
+split:
+  train_end: "2022-12-31"
+  val_end:   "2023-12-31"
+  # test: 2024-01-01 onwards
+
+sequence_len: 60   # look-back window for LSTM / Transformer
+
+training:
+  batch_size: 256
+  epochs: 100
+  lr: 0.001
+  patience: 10       # early stopping
+  seed: 42
+
+models:
+  lgbm:
+    n_estimators: 500
+    learning_rate: 0.05
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    n_jobs: -1
+
+  lstm:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.2
+
+  transformer:
+    d_model: 64
+    nhead: 4
+    num_encoder_layers: 3
+    dim_feedforward: 256
+    dropout: 0.1
