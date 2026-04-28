@@ -1,0 +1,153 @@
+============================================================
+📊 股票池：60 只，覆盖 11 个行业
+📅 数据窗口：2015-01-01 ~ 2026-04-27
+============================================================
+
+📥 加载本地缓存：data/raw_60stocks_2026-04-27.csv
+   数据形状：(154867, 7)
+   实际股票数：60
+   日期范围：2016-01-04 ~ 2026-04-27
+
+🔧 特征工程：技术指标 + VIX + Turbulence...
+Successfully added technical indicators
+Successfully added vix
+Successfully added turbulence index
+
+📈 计算已实现波动率（HV）...
+✅ 添加 7 个波动率特征，总指标数：15
+
+🧮 计算 252 日滚动协方差矩阵...
+   特征工程后：(138119, 26)
+
+🔍 特征验证（NVDA 最新 5 天）：
+      date  close   vix  turbulence    hv_20  hv_term_structure  hv_vix_spread
+2026-04-21 199.88 19.50   74.707045 0.332670           0.623639       0.137670
+2026-04-22 202.50 18.92   98.541720 0.331681           0.602743       0.142481
+2026-04-23 199.64 19.31  182.876723 0.336620           0.691409       0.143520
+2026-04-24 208.27 18.71   93.273343 0.309546           0.789924       0.122446
+2026-04-27 216.61 18.02   86.637455 0.302463           0.855092       0.122263
+
+   协方差矩阵形状：(59, 59)
+
+📂 训练集：(118649, 26) | 测试集：(19352, 26)
+   训练日期：2017-01-03 ~ 2024-12-30
+   测试日期：2025-01-02 ~ 2026-04-24
+
+🌍 环境：股票数=59, 状态特征数=15
+
+📂 加载已训练模型：trained_models/a2c_60stocks_hv.zip
+
+📈 样本外回测（2025-01-01 ~ 2026-04-27）...
+=================================
+begin_total_asset:1000000
+end_total_asset:1199700.3570555607
+Sharpe:  0.9692412284636603
+=================================
+hit end!
+
+============================================================
+📊 A2C 跨行业组合 绩效统计
+============================================================
+Annual return          0.150141
+Cumulative returns     0.199700
+Annual volatility      0.157237
+Sharpe ratio           0.970723
+Calmar ratio           0.849356
+Stability              0.747025
+Max drawdown          -0.176770
+Omega ratio            1.211632
+Sortino ratio          1.421347
+Skew                        NaN
+Kurtosis                    NaN
+Tail ratio             0.941765
+Daily value at risk   -0.019204
+dtype: float64
+Annual return          0.150141
+Cumulative returns     0.199700
+Annual volatility      0.157237
+Sharpe ratio           0.970723
+Calmar ratio           0.849356
+Stability              0.747025
+Max drawdown          -0.176770
+Omega ratio            1.211632
+Sortino ratio          1.421347
+Skew                        NaN
+Kurtosis                    NaN
+Tail ratio             0.941765
+Daily value at risk   -0.019204
+dtype: float64
+
+============================================================
+📊 S&P 500 基准 绩效统计
+============================================================
+Annual return          0.166910
+Cumulative returns     0.223266
+Annual volatility      0.183911
+Sharpe ratio           0.932910
+Calmar ratio           0.878522
+Stability              0.710729
+Max drawdown          -0.189989
+Omega ratio            1.205121
+Sortino ratio          1.407744
+Skew                        NaN
+Kurtosis                    NaN
+Tail ratio             0.925610
+Daily value at risk   -0.022490
+dtype: float64
+Annual return          0.166910
+Cumulative returns     0.223266
+Annual volatility      0.183911
+Sharpe ratio           0.932910
+Calmar ratio           0.878522
+Stability              0.710729
+Max drawdown          -0.189989
+Omega ratio            1.205121
+Sortino ratio          1.407744
+Skew                        NaN
+Kurtosis                    NaN
+Tail ratio             0.925610
+Daily value at risk   -0.022490
+dtype: float64
+
+📉 生成图表...
+✅ 图表已保存到 data/performance_curve.png
+
+============================================================
+📊 平均行业权重分布
+============================================================
+                 行业     平均权重  占比 %
+          科技 (Tech) 0.159057 15.91
+    医疗 (Healthcare) 0.152254 15.23
+消费 (Consumer Disc.) 0.130193 13.02
+    金融 (Financials) 0.125780 12.58
+   工业 (Industrials) 0.095673  9.57
+     必需消费 (Staples) 0.095673  9.57
+ 通讯 (Communication) 0.074073  7.41
+        能源 (Energy) 0.070081  7.01
+   地产 (Real Estate) 0.044488  4.45
+   公用事业 (Utilities) 0.028343  2.83
+     材料 (Materials) 0.024385  2.44
+
+📊 单股权重 Top 10：
+   ABBV   (医疗 (Healthcare)     ): 0.0256  (2.56%)
+   ABT    (医疗 (Healthcare)     ): 0.0256  (2.56%)
+   ADBE   (科技 (Tech)           ): 0.0256  (2.56%)
+   BAC    (金融 (Financials)     ): 0.0256  (2.56%)
+   AMD    (科技 (Tech)           ): 0.0256  (2.56%)
+   BA     (工业 (Industrials)    ): 0.0256  (2.56%)
+   GS     (金融 (Financials)     ): 0.0256  (2.56%)
+   JNJ    (医疗 (Healthcare)     ): 0.0256  (2.56%)
+   GOOGL  (科技 (Tech)           ): 0.0256  (2.56%)
+   COST   (必需消费 (Staples)      ): 0.0256  (2.56%)
+
+============================================================
+✅ 全部完成！
+============================================================
+📁 输出文件：
+   data/raw_60stocks_2026-04-27.csv      原始数据
+   data/portfolio_value.csv               组合每日价值
+   data/portfolio_actions.csv             每日权重
+   data/sector_weights.csv                行业权重
+   data/performance_curve.png             收益曲线
+   data/sector_pie.png                    行业饼图
+   trained_models/a2c_60stocks_hv.zip    训练好的模型

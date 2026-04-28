@@ -19,6 +19,11 @@ warnings.filterwarnings("ignore")
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+# 中文字体配置
+mpl.rcParams["font.sans-serif"] = ["WenQuanYi Zen Hei", "DejaVu Sans"]
+mpl.rcParams["axes.unicode_minus"] = False  # 解决负号显示问题
 
 from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
 from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
@@ -83,29 +88,55 @@ print(f"📅 数据窗口：{TRAIN_START} ~ {TRADE_END}")
 print("=" * 60)
 
 # ================================================================
-# 2. 数据下载（Yahoo Finance，带本地缓存）
+# 2. 数据下载（Alpaca Market Data，带本地缓存）
 # ================================================================
 DATA_CACHE = f"data/raw_60stocks_{TRADE_END}.csv"
+
+# Alpaca 凭证（从环境变量读取）
+ALPACA_API_KEY    = os.environ.get("ALPACA_API_KEY")
+ALPACA_API_SECRET = os.environ.get("ALPACA_API_SECRET")
+ALPACA_API_BASE   = os.environ.get("ALPACA_API_BASE",   "https://paper-api.alpaca.markets")
+
+os.makedirs(os.path.dirname(DATA_CACHE), exist_ok=True)
 
 if os.path.exists(DATA_CACHE):
     print(f"\n📥 加载本地缓存：{DATA_CACHE}")
     df = pd.read_csv(DATA_CACHE)
 else:
-    print(f"\n📥 从 Yahoo Finance 下载（截止 {TRADE_END}）...")
-    df = YahooDownloader(
+    print(f"\n📥 从 Alpaca 下载（{TRAIN_START} ~ {TRADE_END}）...")
+    from finrl.meta.data_processors.processor_alpaca import AlpacaProcessor
+
+    processor = AlpacaProcessor(
+        API_KEY=ALPACA_API_KEY,
+        API_SECRET=ALPACA_API_SECRET,
+        API_BASE_URL=ALPACA_API_BASE,
+    )
+
+    df = processor.download_data(
+        ticker_list=TICKERS,
         start_date=TRAIN_START,
         end_date=TRADE_END,
-        ticker_list=TICKERS
-    ).fetch_data()
+        time_interval="1Day",   # 日线；若想要分钟线改成 "1Min"
+    )
+
+    # —— 列名/格式标准化为 FinRL 下游期望的 schema ——
+    rename_map = {"timestamp": "date", "symbol": "tic"}
+    df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
+
+    # 有些版本返回的列里 date 已经存在，这里统一处理
+    if "date" not in df.columns and df.index.name in ("timestamp", "date"):
+        df = df.reset_index().rename(columns={df.index.name: "date"})
+
+    df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
+    df = df[["date", "tic", "open", "high", "low", "close", "volume"]]
+    df = df.sort_values(["date", "tic"]).reset_index(drop=True)
+
     df.to_csv(DATA_CACHE, index=False)
     print(f"   保存到 {DATA_CACHE}")
 
 print(f"   数据形状：{df.shape}")
 print(f"   实际股票数：{df['tic'].nunique()}")
 print(f"   日期范围：{df['date'].min()} ~ {df['date'].max()}")
-
-if df['date'].max() < "2026-04-25":
-    print(f"⚠️  警告：最新数据只到 {df['date'].max()}，建议删除缓存重跑")
 
 # ================================================================
 # 3. 特征工程：技术指标 + VIX + Turbulence
@@ -244,17 +275,22 @@ print(f"\n🌍 环境：股票数={stock_dim}, 状态特征数={len(INDICATORS)}
 # ================================================================
 # 6. 训练 A2C Agent
 # ================================================================
-print(f"\n🤖 训练 A2C，{TOTAL_TIMESTEPS:,} 步（约 30-90 分钟）...")
-agent = DRLAgent(env=env_train)
-model_a2c = agent.get_model("a2c", model_kwargs=A2C_PARAMS)
-
-trained_a2c = agent.train_model(
-    model=model_a2c,
-    tb_log_name="a2c_60stocks_hv",
-    total_timesteps=TOTAL_TIMESTEPS,
-)
-trained_a2c.save("trained_models/a2c_60stocks_hv")
-print("✅ 模型已保存到 trained_models/a2c_60stocks_hv.zip")
+model_path = "trained_models/a2c_60stocks_hv.zip"
+if os.path.exists(model_path):
+    print(f"\n📂 加载已训练模型：{model_path}")
+    from stable_baselines3 import A2C
+    trained_a2c = A2C.load(model_path)
+else:
+    print(f"\n🤖 训练 A2C，{TOTAL_TIMESTEPS:,} 步（约 30-90 分钟）...")
+    agent = DRLAgent(env=env_train)
+    model_a2c = agent.get_model("a2c", model_kwargs=A2C_PARAMS)
+    trained_a2c = agent.train_model(
+        model=model_a2c,
+        tb_log_name="a2c_60stocks_hv",
+        total_timesteps=TOTAL_TIMESTEPS,
+    )
+    trained_a2c.save("trained_models/a2c_60stocks_hv")
+    print("✅ 模型已保存到 trained_models/a2c_60stocks_hv.zip")
 
 # ================================================================
 # 7. 样本外回测
@@ -262,6 +298,9 @@ print("✅ 模型已保存到 trained_models/a2c_60stocks_hv.zip")
 print(f"\n📈 样本外回测（{TRADE_START} ~ {TRADE_END}）...")
 e_trade = StockPortfolioEnv(df=trade, **env_kwargs)
 df_value, df_actions = DRLAgent.DRL_prediction(trained_a2c, e_trade)
+
+# Compute cumulative account value from daily returns
+df_value["account_value"] = INITIAL_AMOUNT * (1 + df_value["daily_return"]).cumprod()
 
 df_value.to_csv("data/portfolio_value.csv", index=False)
 df_actions.to_csv("data/portfolio_actions.csv")

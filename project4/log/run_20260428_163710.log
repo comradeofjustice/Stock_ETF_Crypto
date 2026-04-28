@@ -1,0 +1,12 @@
+============================================================
+📊 股票池：60 只，覆盖 11 个行业
+📅 数据窗口：2015-01-01 ~ 2026-04-27
+============================================================
+
+📥 从 Alpaca 下载（2015-01-01 ~ 2026-04-27）...
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Stock_ETF_Crypto/project4/pipline.py", line 102, in <module>
+    from finrl.meta.data_processors.processor_alpaca import AlpacaProcessor
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/data_processors/processor_alpaca.py", line 7, in <module>
+    import exchange_calendars as tc
+ModuleNotFoundError: No module named 'exchange_calendars'

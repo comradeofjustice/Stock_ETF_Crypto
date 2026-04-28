@@ -1,0 +1,201 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting finrl
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1f/0a/52729645df1bfb005a0cdb9a4f86f716400fb35035ceec97b002c085396a/FinRL-0.3.7-py3-none-any.whl (127 kB)
+Installing collected packages: finrl
+Successfully installed finrl-0.3.7
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting stockstats
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/31/cd/6ff4431b1d58780885a03b67b1bb94fdb8771f79876d6f11dfdfb34e00ce/stockstats-0.6.8-py3-none-any.whl (32 kB)
+Requirement already satisfied: numpy>=1.16.6 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from stockstats) (2.2.6)
+Requirement already satisfied: pandas>=0.24.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from stockstats) (2.3.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.24.2->stockstats) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.24.2->stockstats) (2026.1.post1)
+Requirement already satisfied: tzdata>=2022.7 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.24.2->stockstats) (2026.2)
+Requirement already satisfied: six>=1.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas>=0.24.2->stockstats) (1.17.0)
+Installing collected packages: stockstats
+Successfully installed stockstats-0.6.8
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pyfolio-reloaded
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/65/0f/66a8f8daec52c242d3cfda7886d72103c5ac0c6793fd185082309985f2a6/pyfolio_reloaded-0.9.9-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 2.3 MB/s  0:00:03
+Requirement already satisfied: numpy>=1.23.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pyfolio-reloaded) (2.2.6)
+Requirement already satisfied: pandas<3.0,>=1.5.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pyfolio-reloaded) (2.3.3)
+Collecting ipython>=3.2.3 (from pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c0/56/4cc7fc9e9e3f38fd324f24f8afe0ad8bb5fa41283f37f1aaf9de0612c968/ipython-8.39.0-py3-none-any.whl (831 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 831.8/831.8 kB 877.8 kB/s  0:00:01
+Requirement already satisfied: matplotlib>=1.4.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pyfolio-reloaded) (3.10.9)
+Requirement already satisfied: pytz>=2014.10 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pyfolio-reloaded) (2026.1.post1)
+Collecting scipy>=0.14.0 (from pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 53.5 MB/s  0:00:00
+Collecting scikit-learn>=0.16.1 (from pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/58/0e/8c2a03d518fb6bd0b6b0d4b114c63d5f1db01ff0f9925d8eb10960d01c01/scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 4.6 MB/s  0:00:02
+Collecting seaborn>=0.7.1 (from pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl (294 kB)
+Collecting empyrical-reloaded>=0.5.9 (from pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/69/54/23d8f6d36c66575b8d31e354c8bba2c857f9ca41e4b76388c6ca53938fd8/empyrical_reloaded-0.5.12-py3-none-any.whl (33 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas<3.0,>=1.5.0->pyfolio-reloaded) (2.9.0.post0)
+Requirement already satisfied: tzdata>=2022.7 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas<3.0,>=1.5.0->pyfolio-reloaded) (2026.2)
+Collecting bottleneck>=1.3.0 (from empyrical-reloaded>=0.5.9->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0d/e3/dbbf4b102f4e6aaf49ad3749a6d778f309473a2950c5ce3bb20b94f2ba84/bottleneck-1.6.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (371 kB)
+Collecting peewee<3.17.4 (from empyrical-reloaded>=0.5.9->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7a/b1/2331e6b1fc8c61686dd9276f34142265462640eb0dd431246e30c4461065/peewee-3.17.3.tar.gz (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 2.7 MB/s  0:00:01
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting decorator (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4e/8c/f3147f5c4b73e7550fe5f9352eaa956ae838d5c51eb58e7a25b9f3e2643b/decorator-5.2.1-py3-none-any.whl (9.2 kB)
+Collecting exceptiongroup (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8a/0e/97c33bf5009bdbac74fd2beace167cab3f978feb69cc36f1ef79360d6c4e/exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Collecting jedi>=0.16 (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c0/5a/9cac0c82afec3d09ccd97c8b6502d48f165f9124db81b4bcb90b4af974ee/jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 10.6 MB/s  0:00:00
+Collecting matplotlib-inline (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/af/33/ee4519fa02ed11a94aef9559552f3b17bb863f2ecfe1a35dc7f548cde231/matplotlib_inline-0.2.1-py3-none-any.whl (9.5 kB)
+Collecting pexpect>4.3 (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9e/c3/059298687310d527a58bb01f3b1965787ee3b40dce76752eda8b44e9a2c5/pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/84/03/0d3ce49e2505ae70cf43bc5bb3033955d2fc9f932163e84dc0779cc47f48/prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+Requirement already satisfied: pygments>=2.4.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from ipython>=3.2.3->pyfolio-reloaded) (2.20.0)
+Collecting stack_data (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f1/7b/ce1eafaf1a76852e2ec9b22edecf1daa58175c090266e9f6c64afcd81d91/stack_data-0.6.3-py3-none-any.whl (24 kB)
+Collecting traitlets>=5.13.0 (from ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/00/c0/8f5d070730d7836adc9c9b6408dec68c6ced86b304a9b26a14df072a6e8c/traitlets-5.14.3-py3-none-any.whl (85 kB)
+Requirement already satisfied: typing_extensions>=4.6 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from ipython>=3.2.3->pyfolio-reloaded) (4.15.0)
+Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/68/5a/199c59e0a824a3db2b89c5d2dade7ab5f9624dbf6448dc291b46d5ec94d3/wcwidth-0.6.0-py3-none-any.whl (94 kB)
+Collecting parso<0.9.0,>=0.8.4 (from jedi>=0.16->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b6/61/fae042894f4296ec49e3f193aff5d7c18440da9e48102c3315e1bc4519a7/parso-0.8.6-py2.py3-none-any.whl (106 kB)
+Requirement already satisfied: contourpy>=1.0.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (1.5.0)
+Requirement already satisfied: packaging>=20.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (26.0)
+Requirement already satisfied: pillow>=8 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (12.2.0)
+Requirement already satisfied: pyparsing>=3 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from matplotlib>=1.4.0->pyfolio-reloaded) (3.3.2)
+Collecting ptyprocess>=0.5 (from pexpect>4.3->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/22/a6/858897256d0deac81a172289110f31629fc4cee19b6f01283303e18c8db3/ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Requirement already satisfied: six>=1.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas<3.0,>=1.5.0->pyfolio-reloaded) (1.17.0)
+Collecting joblib>=1.2.0 (from scikit-learn>=0.16.1->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn>=0.16.1->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Collecting executing>=1.2.0 (from stack_data->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c1/ea/53f2148663b321f21b5a606bd5f191517cf40b7072c0497d3c92c4a13b1e/executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Collecting asttokens>=2.1.0 (from stack_data->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d2/39/e7eaf1799466a4aef85b6a4fe7bd175ad2b1c6345066aa33f1f58d4b18d0/asttokens-3.0.1-py3-none-any.whl (27 kB)
+Collecting pure-eval (from stack_data->ipython>=3.2.3->pyfolio-reloaded)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8e/37/efad0257dc6e593a18957422533ff0f87ede7c9c6ea010a2177d738fb82f/pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Building wheels for collected packages: peewee
+  Building wheel for peewee (pyproject.toml): started
+  Building wheel for peewee (pyproject.toml): finished with status 'done'
+  Created wheel for peewee: filename=peewee-3.17.3-cp310-cp310-linux_x86_64.whl size=275351 sha256=63f4d8f12a7aea627e48a20bdc573185336b4cf139da60d573002dc2d222c62a
+  Stored in directory: /root/.cache/pip/wheels/b0/90/14/3470e1e3878cf27374ccbdfdccc60fb4db49159f99fcd9ea86
+Successfully built peewee
+Installing collected packages: pure-eval, ptyprocess, peewee, wcwidth, traitlets, threadpoolctl, scipy, pexpect, parso, joblib, executing, exceptiongroup, decorator, bottleneck, asttokens, stack_data, scikit-learn, prompt_toolkit, matplotlib-inline, jedi, seaborn, ipython, empyrical-reloaded, pyfolio-reloaded
+  Attempting uninstall: peewee
+    Found existing installation: peewee 4.0.5
+    Uninstalling peewee-4.0.5:
+      Successfully uninstalled peewee-4.0.5
+
+Successfully installed asttokens-3.0.1 bottleneck-1.6.0 decorator-5.2.1 empyrical-reloaded-0.5.12 exceptiongroup-1.3.1 executing-2.2.1 ipython-8.39.0 jedi-0.19.2 joblib-1.5.3 matplotlib-inline-0.2.1 parso-0.8.6 peewee-3.17.3 pexpect-4.9.0 prompt_toolkit-3.0.52 ptyprocess-0.7.0 pure-eval-0.2.3 pyfolio-reloaded-0.9.9 scikit-learn-1.7.2 scipy-1.15.3 seaborn-0.13.2 stack_data-0.6.3 threadpoolctl-3.6.0 traitlets-5.14.3 wcwidth-0.6.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting alpaca-trade-api
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0b/b2/4557d0a4c837b020bc5c8971e8fde8b976e332d5c225476699e0b5e30b41/alpaca_trade_api-3.2.0-py3-none-any.whl (34 kB)
+Requirement already satisfied: pandas>=0.18.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from alpaca-trade-api) (2.3.3)
+Requirement already satisfied: numpy>=1.11.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from alpaca-trade-api) (2.2.6)
+Requirement already satisfied: requests<3,>2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from alpaca-trade-api) (2.33.1)
+Collecting urllib3<2,>1.24 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/33/cf/8435d5a7159e2a9c83a95896ed596f68cf798005fe107cc655b5c5c14704/urllib3-1.26.20-py2.py3-none-any.whl (144 kB)
+Collecting websocket-client<2,>=0.56.0 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/34/db/b10e48aa8fff7407e67470363eac595018441cf32d5e1001567a7aeba5d2/websocket_client-1.9.0-py3-none-any.whl (82 kB)
+Collecting websockets<11,>=9.0 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4d/6f/2388f9304cdaa0215b6388f837c6dbfe6d63ac1bba8c196e3b14eea1831e/websockets-10.4-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (106 kB)
+Collecting msgpack==1.0.3 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1b/18/61b7462849c31fafd7c7d05a2ae896d495a1c1bf7f25788a4a8af9439153/msgpack-1.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (323 kB)
+Collecting aiohttp<4,>=3.8.3 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2f/86/a6f3ff1fd795f49545a7c74b2c92f62729135d73e7e4055bf74da5a26c82/aiohttp-3.13.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 36.3 MB/s  0:00:00
+Collecting PyYAML==6.0.1 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/29/61/bf33c6c85c55bc45a29eee3195848ff2d518d84735eb0e2d8cb42e0d285e/PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (705 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 705.5/705.5 kB 834.7 kB/s  0:00:02
+Collecting deprecation==2.1.0 (from alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/02/c3/253a89ee03fc9b9682f1541728eb66db7db22148cd94f89ab22528cd1e1b/deprecation-2.1.0-py2.py3-none-any.whl (11 kB)
+Requirement already satisfied: packaging in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from deprecation==2.1.0->alpaca-trade-api) (26.0)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0f/15/5bf3b99495fb160b63f95972b81750f18f7f4e02ad051373b669d17d44f2/aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting async-timeout<6.0,>=4.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fe/ba/e2081de779ca30d473f21f5b30e0e737c438205440784c7dfc81efc2b029/async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+Collecting attrs>=17.3.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl (67 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5d/ed/c7895fd2fde7f3ee70d248175f9b6cdf792fb741ab92dc59cd9ef3bd241b/frozenlist-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4b/ac/b605473de2bb404e742f2cc3583d12aedb2352a70e49ae8fce455b50c5aa/multidict-6.7.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (243 kB)
+Collecting propcache>=0.2.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/08/57/8c87e93142b2c1fa2408e45695205a7ba05fb5db458c0bf5c06ba0e09ea6/propcache-0.4.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp<4,>=3.8.3->alpaca-trade-api)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/50/12/95a1d33f04a79c402664070d43b8b9f72dc18914e135b345b611b0b1f8cc/yarl-1.23.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (102 kB)
+Requirement already satisfied: typing-extensions>=4.1.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from multidict<7.0,>=4.5->aiohttp<4,>=3.8.3->alpaca-trade-api) (4.15.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from requests<3,>2->alpaca-trade-api) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from requests<3,>2->alpaca-trade-api) (3.13)
+Requirement already satisfied: certifi>=2023.5.7 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from requests<3,>2->alpaca-trade-api) (2026.4.22)
+Requirement already satisfied: python-dateutil>=2.8.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.18.1->alpaca-trade-api) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.18.1->alpaca-trade-api) (2026.1.post1)
+Requirement already satisfied: tzdata>=2022.7 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=0.18.1->alpaca-trade-api) (2026.2)
+Requirement already satisfied: six>=1.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas>=0.18.1->alpaca-trade-api) (1.17.0)
+Installing collected packages: msgpack, websockets, websocket-client, urllib3, PyYAML, propcache, multidict, frozenlist, deprecation, attrs, async-timeout, aiohappyeyeballs, yarl, aiosignal, aiohttp, alpaca-trade-api
+  Attempting uninstall: websockets
+    Found existing installation: websockets 16.0
+    Uninstalling websockets-16.0:
+      Successfully uninstalled websockets-16.0
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 2.6.3
+    Uninstalling urllib3-2.6.3:
+      Successfully uninstalled urllib3-2.6.3
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+yfinance 1.3.0 requires websockets>=13.0, but you have websockets 10.4 which is incompatible.
+Successfully installed PyYAML-6.0.1 aiohappyeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 alpaca-trade-api-3.2.0 async-timeout-5.0.1 attrs-26.1.0 deprecation-2.1.0 frozenlist-1.8.0 msgpack-1.0.3 multidict-6.7.1 propcache-0.4.1 urllib3-1.26.20 websocket-client-1.9.0 websockets-10.4 yarl-1.23.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting websockets>=13.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/2f/4b3ca7e106bc608744b1cdae041e005e446124bebb037b18799c2d356864/websockets-16.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (183 kB)
+Installing collected packages: websockets
+  Attempting uninstall: websockets
+    Found existing installation: websockets 10.4
+    Uninstalling websockets-10.4:
+      Successfully uninstalled websockets-10.4
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+alpaca-trade-api 3.2.0 requires websockets<11,>=9.0, but you have websockets 16.0 which is incompatible.
+Successfully installed websockets-16.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting exchange_calendars
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c8/4c/0469b40057bc9f8d9594dcc6024202626b981ae4b52dfcd304552e8e1c3a/exchange_calendars-4.13.2-py3-none-any.whl (213 kB)
+Requirement already satisfied: numpy>=1.26.4 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from exchange_calendars) (2.2.6)
+Requirement already satisfied: pandas>=1.5.0 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from exchange_calendars) (2.3.3)
+Collecting pyluach>=2.3.0 (from exchange_calendars)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8a/c8/f96208ade3ca4c23b372497d0788bcf0f2e0ff4310e5ee693366bc33fdf0/pyluach-2.3.0-py3-none-any.whl (25 kB)
+Collecting toolz>=1.0.0 (from exchange_calendars)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/12/5911ae3eeec47800503a238d971e51722ccea5feb8569b735184d5fcdbc0/toolz-1.1.0-py3-none-any.whl (58 kB)
+Requirement already satisfied: tzdata>=2025.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from exchange_calendars) (2026.2)
+Collecting korean_lunar_calendar>=0.3.1 (from exchange_calendars)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9c/96/30f3fe51b336bb6da4714f4fdad7bbdce8f13af79af2eb75e22908f3f9f4/korean_lunar_calendar-0.3.1-py3-none-any.whl (9.0 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=1.5.0->exchange_calendars) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from pandas>=1.5.0->exchange_calendars) (2026.1.post1)
+Requirement already satisfied: six>=1.5 in /root/miniconda3/envs/finrl/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas>=1.5.0->exchange_calendars) (1.17.0)
+Installing collected packages: korean_lunar_calendar, toolz, pyluach, exchange_calendars
+
+Successfully installed exchange_calendars-4.13.2 korean_lunar_calendar-0.3.1 pyluach-2.3.0 toolz-1.1.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

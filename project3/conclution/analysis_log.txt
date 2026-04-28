@@ -1,0 +1,97 @@
+[2026-04-28 16:23:54] Loading data...
+[2026-04-28 16:23:54] Loaded 309 assets: {'stock': 283, 'etf': 24, 'crypto': 2}
+[2026-04-28 16:23:54] Crypto: 2, ETFs: 24, Stocks: 283
+[2026-04-28 16:23:54] Generating report...
+[2026-04-28 16:23:54] Section 1 done
+[2026-04-28 16:23:54] Section 2 done
+[2026-04-28 16:23:55] Section 3.1 done
+[2026-04-28 16:23:55] Section 3.2 done
+[2026-04-28 16:23:55] Section 3.3 done
+[2026-04-28 16:23:55] Section 3.4 done
+[2026-04-28 16:23:56] Section 3.5-3.6 done
+[2026-04-28 16:23:56] Section 3.7 done
+[2026-04-28 16:23:56] Section 4.1 done
+[2026-04-28 16:23:56] Section 4.2-4.5 done
+[2026-04-28 16:23:56] Section 4.6-4.7 done
+[2026-04-28 16:24:45] Loading data...
+[2026-04-28 16:24:45] Loaded 309 assets: {'stock': 283, 'etf': 24, 'crypto': 2}
+[2026-04-28 16:24:45] Crypto: 2, ETFs: 24, Stocks: 283
+[2026-04-28 16:24:45] Generating report...
+[2026-04-28 16:24:45] Section 1 done
+[2026-04-28 16:24:45] Section 2 done
+[2026-04-28 16:24:45] Section 3.1 done
+[2026-04-28 16:24:46] Section 3.2 done
+[2026-04-28 16:24:46] Section 3.3 done
+[2026-04-28 16:24:46] Section 3.4 done
+[2026-04-28 16:24:47] Section 3.5-3.6 done
+[2026-04-28 16:24:47] Section 3.7 done
+[2026-04-28 16:24:47] Section 4.1 done
+[2026-04-28 16:24:47] Section 4.2-4.5 done
+[2026-04-28 16:24:47] Section 4.6-4.7 done
+[2026-04-28 16:24:47] Report written to /root/autodl-tmp/Stock_ETF_Crypto/project3/conclution/correlation_portfolio_analysis.md
+[2026-04-28 16:24:47] Total lines: 500
+[2026-04-28 16:24:47] Done!
+[2026-04-28 16:26:25] Loading data...
+[2026-04-28 16:26:26] Loaded 309 assets: {'stock': 283, 'etf': 24, 'crypto': 2}
+[2026-04-28 16:26:26] Crypto: 2, ETFs: 24, Stocks: 283
+[2026-04-28 16:26:26] Generating report...
+[2026-04-28 16:26:26] Section 1 done
+[2026-04-28 16:26:26] Section 2 done
+[2026-04-28 16:26:26] Section 3.1 done
+[2026-04-28 16:26:26] Section 3.2 done
+[2026-04-28 16:26:26] Section 3.3 done
+[2026-04-28 16:26:26] Section 3.4 done
+[2026-04-28 16:26:27] Section 3.5-3.6 done
+[2026-04-28 16:26:27] Section 3.7 done
+[2026-04-28 16:26:27] Section 4.1 done
+[2026-04-28 16:26:27] Section 4.2-4.5 done
+[2026-04-28 16:26:27] Section 4.6-4.7 done
+[2026-04-28 16:26:27] Report written to /root/autodl-tmp/Stock_ETF_Crypto/project3/conclution/correlation_portfolio_analysis.md
+[2026-04-28 16:26:27] Total lines: 491
+[2026-04-28 16:26:27] Done!
+[2026-04-28 16:38:37] Loading data...
+[2026-04-28 16:38:37] Building industry mapping...
+[2026-04-28 16:38:37] Generating report...
+[2026-04-28 16:38:37] Section 1 done
+[2026-04-28 16:38:37] Section 2 done
+[2026-04-28 16:38:38] Section 3 done
+[2026-04-28 16:38:38] Section 4 done
+[2026-04-28 16:38:38] Section 5 done
+[2026-04-28 16:38:39] Section 6 done
+[2026-04-28 16:38:39] Report written to /root/autodl-tmp/Stock_ETF_Crypto/project3/conclution/industry_financial_principles.md
+[2026-04-28 16:38:39] Total lines: 556
+[2026-04-28 16:38:39] Done!
+[2026-04-28 16:53:04] Loading data...
+[2026-04-28 16:53:04] Generating deep-dive report...
+[2026-04-28 16:53:04]   ETF group 权益宽基 (Broad Market) done
+[2026-04-28 16:53:04]   ETF group 权益风格/市值 (Style & Size) done
+[2026-04-28 16:53:04]   ETF group 国际/地域 (International) done
+[2026-04-28 16:53:04]   ETF group 行业板块 (Sector) done
+[2026-04-28 16:53:04]   ETF group 大宗商品 (Commodities) done
+[2026-04-28 16:53:04]   ETF group 波动率与对冲 (Vol & Hedging) done
+[2026-04-28 16:53:04]   ETF group 杠杆 (Leveraged) done
+[2026-04-28 16:53:04]   ETF group 主动/主题 (Active/Thematic) done
+[2026-04-28 16:53:04] Part 1 (ETFs) done
+[2026-04-28 16:53:42] Loading data...
+[2026-04-28 16:53:42] Generating deep-dive report...
+[2026-04-28 16:53:42]   ETF group 权益宽基 (Broad Market) done
+[2026-04-28 16:53:42]   ETF group 权益风格/市值 (Style & Size) done
+[2026-04-28 16:53:42]   ETF group 国际/地域 (International) done
+[2026-04-28 16:53:42]   ETF group 行业板块 (Sector) done
+[2026-04-28 16:53:42]   ETF group 大宗商品 (Commodities) done
+[2026-04-28 16:53:42]   ETF group 波动率与对冲 (Vol & Hedging) done
+[2026-04-28 16:53:42]   ETF group 杠杆 (Leveraged) done
+[2026-04-28 16:53:42]   ETF group 主动/主题 (Active/Thematic) done
+[2026-04-28 16:53:42] Part 1 (ETFs) done
+[2026-04-28 16:53:42]   Industry 科技与半导体 done
+[2026-04-28 16:53:42]   Industry 金融 done
+[2026-04-28 16:53:42]   Industry 医疗健康 done
+[2026-04-28 16:53:42]   Industry 能源 done
+[2026-04-28 16:53:42]   Industry 消费 done
+[2026-04-28 16:53:42]   Industry 工业与国防 done
+[2026-04-28 16:53:42]   Industry 材料与矿业 done
+[2026-04-28 16:53:42]   Industry 中国概念 done
+[2026-04-28 16:53:42] Part 2 (Stocks) done
+[2026-04-28 16:53:42] Report written to /root/autodl-tmp/Stock_ETF_Crypto/project3/conclution/individual_ticker_deep_dive.md
+[2026-04-28 16:53:42] Total lines: 3880
+[2026-04-28 16:53:42] Done!

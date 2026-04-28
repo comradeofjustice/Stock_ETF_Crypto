@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Stock_ETF_Crypto/project4/pipline.py", line 23, in <module>
+    from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/preprocessor/yahoodownloader.py", line 8, in <module>
+    import yfinance as yf
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/yfinance/__init__.py", line 25, in <module>
+    from .ticker import Ticker
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/yfinance/ticker.py", line 28, in <module>
+    from .base import TickerBase
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/yfinance/base.py", line 38, in <module>
+    from .live import WebSocket
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/yfinance/live.py", line 6, in <module>
+    from websockets.sync.client import connect as sync_connect
+ModuleNotFoundError: No module named 'websockets.sync'

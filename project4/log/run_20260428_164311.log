@@ -1,0 +1,26 @@
+============================================================
+📊 股票池：60 只，覆盖 11 个行业
+📅 数据窗口：2015-01-01 ~ 2026-04-27
+============================================================
+
+📥 加载本地缓存：data/raw_60stocks_2026-04-27.csv
+   数据形状：(154867, 7)
+   实际股票数：60
+   日期范围：2016-01-04 ~ 2026-04-27
+
+🔧 特征工程：技术指标 + VIX + Turbulence...
+Successfully added technical indicators
+[*********************100%***********************]  1 of 1 completed
+
+1 Failed download:
+['^VIX']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Stock_ETF_Crypto/project4/pipline.py", line 146, in <module>
+    processed = fe.preprocess_data(df)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/preprocessor/preprocessors.py", line 92, in preprocess_data
+    df = self.add_vix(df)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/preprocessor/preprocessors.py", line 198, in add_vix
+    ).fetch_data()
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/preprocessor/yahoodownloader.py", line 61, in fetch_data
+    raise ValueError("no data is fetched.")
+ValueError: no data is fetched.

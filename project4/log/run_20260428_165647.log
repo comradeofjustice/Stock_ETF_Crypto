@@ -1,0 +1,106 @@
+============================================================
+📊 股票池：60 只，覆盖 11 个行业
+📅 数据窗口：2015-01-01 ~ 2026-04-27
+============================================================
+
+📥 加载本地缓存：data/raw_60stocks_2026-04-27.csv
+   数据形状：(154867, 7)
+   实际股票数：60
+   日期范围：2016-01-04 ~ 2026-04-27
+
+🔧 特征工程：技术指标 + VIX + Turbulence...
+Successfully added technical indicators
+Successfully added vix
+Successfully added turbulence index
+
+📈 计算已实现波动率（HV）...
+✅ 添加 7 个波动率特征，总指标数：15
+
+🧮 计算 252 日滚动协方差矩阵...
+   特征工程后：(138119, 26)
+
+🔍 特征验证（NVDA 最新 5 天）：
+      date  close   vix  turbulence    hv_20  hv_term_structure  hv_vix_spread
+2026-04-21 199.88 19.50   74.707045 0.332670           0.623639       0.137670
+2026-04-22 202.50 18.92   98.541720 0.331681           0.602743       0.142481
+2026-04-23 199.64 19.31  182.876723 0.336620           0.691409       0.143520
+2026-04-24 208.27 18.71   93.273343 0.309546           0.789924       0.122446
+2026-04-27 216.61 18.02   86.637455 0.302463           0.855092       0.122263
+
+   协方差矩阵形状：(59, 59)
+
+📂 训练集：(118649, 26) | 测试集：(19352, 26)
+   训练日期：2017-01-03 ~ 2024-12-30
+   测试日期：2025-01-02 ~ 2026-04-24
+
+🌍 环境：股票数=59, 状态特征数=15
+
+🤖 训练 A2C，400,000 步（约 30-90 分钟）...
+{'n_steps': 10, 'ent_coef': 0.005, 'learning_rate': 0.0004}
+Using cuda device
+-------------------------------------
+| time/                 |           |
+|    fps                | 358       |
+|    iterations         | 100       |
+|    time_elapsed       | 2         |
+|    total_timesteps    | 1000      |
+| train/                |           |
+|    entropy_loss       | -83.4     |
+|    explained_variance | 1.79e-07  |
+|    learning_rate      | 0.0004    |
+|    n_updates          | 99        |
+|    policy_loss        | 8.94e+08  |
+|    reward             | 2029714.0 |
+|    std                | 0.995     |
+|    value_loss         | 1.47e+14  |
+-------------------------------------
+-------------------------------------
+| time/                 |           |
+|    fps                | 400       |
+|    iterations         | 200       |
+|    time_elapsed       | 4         |
+|    total_timesteps    | 2000      |
+| train/                |           |
+|    entropy_loss       | -83.4     |
+|    explained_variance | 0         |
+|    learning_rate      | 0.0004    |
+|    n_updates          | 199       |
+|    policy_loss        | 1.74e+09  |
+|    reward             | 3797197.8 |
+|    std                | 0.995     |
+|    value_loss         | 5.25e+14  |
+-------------------------------------
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Stock_ETF_Crypto/project4/pipline.py", line 277, in <module>
+    trained_a2c = agent.train_model(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/agents/stablebaselines3/models.py", line 117, in train_model
+    model = model.learn(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/stable_baselines3/a2c/a2c.py", line 201, in learn
+    return super().learn(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py", line 324, in learn
+    continue_training = self.collect_rollouts(self.env, callback, self.rollout_buffer, n_rollout_steps=self.n_steps)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py", line 218, in collect_rollouts
+    new_obs, rewards, dones, infos = env.step(clipped_actions)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/stable_baselines3/common/vec_env/base_vec_env.py", line 222, in step
+    return self.step_wait()
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/stable_baselines3/common/vec_env/dummy_vec_env.py", line 59, in step_wait
+    obs, self.buf_rews[env_idx], terminated, truncated, self.buf_infos[env_idx] = self.envs[env_idx].step(  # type: ignore[assignment]
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/finrl/meta/env_portfolio_allocation/env_portfolio.py", line 134, in step
+    plt.savefig("results/cumulative_reward.png")
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1250, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/figure.py", line 3497, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2186, in print_figure
+    result = print_method(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2042, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/matplotlib/image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/root/miniconda3/envs/finrl/lib/python3.10/site-packages/PIL/Image.py", line 2708, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/cumulative_reward.png'
